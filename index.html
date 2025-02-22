@@ -2,11 +2,14 @@
 <html>
 <head>
     <title>ice_wolz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="shortcut icon" href="ice_wolz.png">
     <style>
         body {
             background-color: #333; 
+            color: #fff;
+            font-family: Arial, sans-serif;
         }
         
         .header {
@@ -25,6 +28,7 @@
         .social-buttons {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Sosyal düğmelerin sığmaması durumunda alt satıra geçmesini sağlar */
             margin-top: 20px;
         }
         
@@ -36,6 +40,9 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             margin: 10px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .social-button:hover {
@@ -45,29 +52,43 @@
         .social-button i {
             color: #fff; 
             font-size: 20px;
-            line-height: 40px;
+        }
+        
+        /* Mobil uyumluluk için medya sorguları */
+        @media (max-width: 768px) {
+            .profile-picture {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .social-button {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+            
+            iframe {
+                width: 100%; /* Spotify iframe genişliğini mobil cihazlar için %100 yapar */
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-picture {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .social-button {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            iframe {
+                height: 180px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="ice_wolz.png" alt="Profile Picture" class="profile-picture">
-        <div class="social-buttons">
-            <a href="https://www.instagram.com/ice_wolz/" target="_blank" class="social-button">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://discord.com/users/863073478348636242" target="_blank" class="social-button">
-                <i class="fab fa-discord"></i>
-            </a>
-            <a href="https://www.youtube.com/channel/UCTQcpbzUtcNgm_bb0kN4QZA" target="_blank" class="social-button">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://open.spotify.com/user/31yg4ezd2xn6hvjjoju4aykkhhxy" target="_blank" class="social-button">
-                <i class="fab fa-spotify"></i>
-            </a>
-        </div>
-        <!-- Spotify Play Button -->
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6cOk7Ry9kZmnNAzVscxwnw?utm_source=generator&theme=0" width="40%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-</body>
-</html>
